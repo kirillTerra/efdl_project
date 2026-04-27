@@ -1,0 +1,58 @@
+{
+  "model_id": "unsloth/Llama-3.2-1B-Instruct",
+  "dataset": {
+    "name": "wikitext",
+    "config": "wikitext-2-raw-v1",
+    "split": "test",
+    "max_eval_tokens": 512
+  },
+  "linear_config": {
+    "include_lm_head": false,
+    "block_m": null,
+    "block_n": null,
+    "block_k": null,
+    "num_warps": null,
+    "num_stages": null
+  },
+  "baseline": {
+    "perplexity": {
+      "sequence_length": 256,
+      "forward_tokens": 512,
+      "predicted_tokens": 510,
+      "time_s": 0.35781364515423775,
+      "forward_tokens_per_s": 1430.9124510310369,
+      "predicted_tokens_per_s": 1425.322949269197,
+      "mean_nll": 2.863731265068054,
+      "perplexity": 17.526802226044992
+    }
+  },
+  "quantized": {
+    "quantization": {
+      "time_s": 1.563485063612461,
+      "replaced_modules": 112,
+      "skipped_modules": 1,
+      "original_weight_MiB": 1856.0,
+      "quantized_weight_MiB": 465.4375,
+      "compression_ratio": 3.987646031959178,
+      "skip_module_names": [
+        "lm_head"
+      ]
+    },
+    "perplexity": {
+      "sequence_length": 256,
+      "forward_tokens": 512,
+      "predicted_tokens": 510,
+      "time_s": 1.861142598092556,
+      "forward_tokens_per_s": 275.0998233691161,
+      "predicted_tokens_per_s": 274.0252146840805,
+      "mean_nll": 3.6201515197753906,
+      "perplexity": 37.343225630567794
+    }
+  },
+  "comparison": {
+    "ppl_delta": 19.8164234045228,
+    "ppl_ratio": 2.130635420480492,
+    "eval_time_ratio_quantized_over_baseline": 5.201429915536897,
+    "forward_tokens_per_s_ratio": 0.19225482535349686
+  }
+}
